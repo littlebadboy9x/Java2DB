@@ -284,7 +284,7 @@ public class fQLGV extends javax.swing.JFrame {
         // TODO add your handling code here:                                 
         // Lấy chỉ số dòng được chọn
         int rowIndex = tblList.getSelectedRow();
-        System.out.println("Row index selected: " + rowIndex);
+        System.out.println("Dòng được chọn: " + rowIndex);
 
         // Kiểm tra xem có dòng nào được chọn không
         if (rowIndex >= 0 && rowIndex < lists.size()) {
@@ -495,7 +495,7 @@ public class fQLGV extends javax.swing.JFrame {
         // Lấy giá trị từ cboBac và chuyển đổi sang Integer
         int bac = Integer.parseInt((String) cboBac.getSelectedItem()); // Chuyển đổi từ String sang Integer
 
-        int gioiTinh = rdoNam.isSelected() ? 1 : 0;
+        int gioiTinh = rdoNam.isSelected() ? 1 : (rdoNu.isSelected() ? 0 : -1); // -1 nếu không có lựa chọn nào
 
         return new GiangVien(ma, ten, loai, tuoi, bac, gioiTinh);
     }
